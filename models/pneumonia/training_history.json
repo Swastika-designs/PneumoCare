@@ -1,0 +1,141 @@
+{
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.14685054887766644,
+      "train_accuracy": 0.947536108751062,
+      "val_loss": 0.07462688385285149,
+      "val_accuracy": 0.9767441860465116,
+      "val_roc_auc": 0.9960338291046952,
+      "val_f1": 0.9841269841269842,
+      "lr": 9.330127018922194e-05,
+      "seconds": 331.7
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.0668147548037354,
+      "train_accuracy": 0.973661852166525,
+      "val_loss": 0.10384642550100882,
+      "val_accuracy": 0.9631782945736435,
+      "val_roc_auc": 0.9978030523962282,
+      "val_f1": 0.9745649263721552,
+      "lr": 7.500000000000001e-05,
+      "seconds": 344.0
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.04645281355487703,
+      "train_accuracy": 0.9834324553950722,
+      "val_loss": 0.1079742249819746,
+      "val_accuracy": 0.9689922480620154,
+      "val_roc_auc": 0.9979197044813843,
+      "val_f1": 0.9786096256684492,
+      "lr": 5e-05,
+      "seconds": 336.0
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.03682560531086998,
+      "train_accuracy": 0.9876805437553101,
+      "val_loss": 0.07929837373590688,
+      "val_accuracy": 0.9786821705426356,
+      "val_roc_auc": 0.9973947700981822,
+      "val_f1": 0.9854304635761589,
+      "lr": 2.500000000000001e-05,
+      "seconds": 331.6
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.034922718455893925,
+      "train_accuracy": 0.9883177570093458,
+      "val_loss": 0.11623689118960454,
+      "val_accuracy": 0.9612403100775194,
+      "val_roc_auc": 0.9981530086516963,
+      "val_f1": 0.9731182795698925,
+      "lr": 6.698729810778065e-06,
+      "seconds": 443.2
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.028952018133315757,
+      "train_accuracy": 0.9885301614273577,
+      "val_loss": 0.10777313102672036,
+      "val_accuracy": 0.9670542635658915,
+      "val_roc_auc": 0.9983279867794304,
+      "val_f1": 0.9772423025435073,
+      "lr": 0.0,
+      "seconds": 544.1
+    }
+  ],
+  "meta": {
+    "arch": "resnet18",
+    "classes": [
+      "NORMAL",
+      "PNEUMONIA"
+    ],
+    "img_size": 224,
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "threshold": 0.028753897175192833,
+    "threshold_method": "Youden J statistic on the validation split",
+    "data_source": "pneumoniamnist",
+    "data_notes": [
+      "PneumoniaMNIST official splits: train/val come from the Kaggle training folder (9:1), test is the Kaggle test folder.",
+      "Patient identifiers are not distributed with MedMNIST, so leakage is checked with image hashes only."
+    ],
+    "removed_val_duplicates": 8,
+    "train_samples": 4708,
+    "val_samples": 516,
+    "best_epoch": 6,
+    "epochs_run": 6,
+    "val_metrics_at_threshold": {
+      "threshold": 0.028753897175192833,
+      "accuracy": 0.9883720930232558,
+      "precision": 0.987012987012987,
+      "recall": 0.9973753280839895,
+      "sensitivity": 0.9973753280839895,
+      "specificity": 0.9629629629629629,
+      "f1": 0.9921671018276763,
+      "roc_auc": 0.9983279867794304,
+      "confusion_matrix": {
+        "tn": 130,
+        "fp": 5,
+        "fn": 1,
+        "tp": 380
+      },
+      "support": {
+        "normal": 135,
+        "pneumonia": 381
+      }
+    },
+    "config": {
+      "source": "auto",
+      "arch": "resnet18",
+      "img_size": 224,
+      "epochs": 6,
+      "batch_size": 32,
+      "lr": 0.0001,
+      "weight_decay": 0.0001,
+      "patience": 3,
+      "seed": 42,
+      "num_workers": 0,
+      "max_train_samples": null,
+      "max_eval_samples": null,
+      "drop_val_duplicates": true,
+      "pretrained": true,
+      "output_dir": null
+    },
+    "trained_at": "2026-10-26T15:14:42.868921+00:00",
+    "training_seconds": 2346.7,
+    "torch_version": "2.5.1+cpu",
+    "device": "cpu"
+  }
+}

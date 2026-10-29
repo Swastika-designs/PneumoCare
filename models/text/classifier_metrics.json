@@ -1,0 +1,342 @@
+{
+  "classes": [
+    "neoplasms",
+    "digestive system diseases",
+    "nervous system diseases",
+    "cardiovascular diseases",
+    "general pathological conditions"
+  ],
+  "train_documents": 11550,
+  "test_documents": 2888,
+  "vectorizer": "TF-IDF, unigrams+bigrams, sublinear TF, min_df=2, max_df=0.9, English stop words",
+  "models": {
+    "logistic_regression": {
+      "name": "Logistic regression",
+      "accuracy": 0.4989612188365651,
+      "macro_f1": 0.4909677934991391,
+      "weighted_f1": 0.49881054220023335,
+      "per_class": [
+        {
+          "class": "neoplasms",
+          "precision": 0.6422893481717011,
+          "recall": 0.6382306477093207,
+          "f1": 0.6402535657686212,
+          "support": 633.0
+        },
+        {
+          "class": "digestive system diseases",
+          "precision": 0.4095940959409594,
+          "recall": 0.3712374581939799,
+          "f1": 0.3894736842105263,
+          "support": 299.0
+        },
+        {
+          "class": "nervous system diseases",
+          "precision": 0.4728434504792332,
+          "recall": 0.38441558441558443,
+          "f1": 0.42406876790830944,
+          "support": 385.0
+        },
+        {
+          "class": "cardiovascular diseases",
+          "precision": 0.5829307568438004,
+          "recall": 0.5934426229508196,
+          "f1": 0.5881397238017871,
+          "support": 610.0
+        },
+        {
+          "class": "general pathological conditions",
+          "precision": 0.3946869070208729,
+          "recall": 0.4328824141519251,
+          "f1": 0.4129032258064516,
+          "support": 961.0
+        }
+      ],
+      "confusion_matrix": [
+        [
+          404,
+          33,
+          34,
+          21,
+          141
+        ],
+        [
+          38,
+          111,
+          4,
+          14,
+          132
+        ],
+        [
+          32,
+          7,
+          148,
+          31,
+          167
+        ],
+        [
+          17,
+          7,
+          26,
+          362,
+          198
+        ],
+        [
+          138,
+          113,
+          101,
+          193,
+          416
+        ]
+      ]
+    },
+    "linear_svm": {
+      "name": "Linear SVM",
+      "accuracy": 0.5114265927977839,
+      "macro_f1": 0.5049933576177524,
+      "weighted_f1": 0.5096967984305031,
+      "per_class": [
+        {
+          "class": "neoplasms",
+          "precision": 0.6440422322775264,
+          "recall": 0.674565560821485,
+          "f1": 0.6589506172839507,
+          "support": 633.0
+        },
+        {
+          "class": "digestive system diseases",
+          "precision": 0.4178082191780822,
+          "recall": 0.4080267558528428,
+          "f1": 0.4128595600676819,
+          "support": 299.0
+        },
+        {
+          "class": "nervous system diseases",
+          "precision": 0.49050632911392406,
+          "recall": 0.4025974025974026,
+          "f1": 0.442225392296719,
+          "support": 385.0
+        },
+        {
+          "class": "cardiovascular diseases",
+          "precision": 0.5874015748031496,
+          "recall": 0.6114754098360655,
+          "f1": 0.5991967871485944,
+          "support": 610.0
+        },
+        {
+          "class": "general pathological conditions",
+          "precision": 0.4073319755600815,
+          "recall": 0.4162330905306972,
+          "f1": 0.4117344312918168,
+          "support": 961.0
+        }
+      ],
+      "confusion_matrix": [
+        [
+          427,
+          33,
+          30,
+          21,
+          122
+        ],
+        [
+          39,
+          122,
+          5,
+          13,
+          120
+        ],
+        [
+          36,
+          9,
+          155,
+          31,
+          154
+        ],
+        [
+          17,
+          8,
+          26,
+          373,
+          186
+        ],
+        [
+          144,
+          120,
+          100,
+          197,
+          400
+        ]
+      ]
+    },
+    "complement_nb": {
+      "name": "Complement Naive Bayes",
+      "accuracy": 0.5855263157894737,
+      "macro_f1": 0.5777521149708268,
+      "weighted_f1": 0.5633460407042444,
+      "per_class": [
+        {
+          "class": "neoplasms",
+          "precision": 0.6439024390243903,
+          "recall": 0.8341232227488151,
+          "f1": 0.7267721954576738,
+          "support": 633.0
+        },
+        {
+          "class": "digestive system diseases",
+          "precision": 0.4835164835164835,
+          "recall": 0.5886287625418061,
+          "f1": 0.530920060331825,
+          "support": 299.0
+        },
+        {
+          "class": "nervous system diseases",
+          "precision": 0.5388471177944862,
+          "recall": 0.5584415584415584,
+          "f1": 0.548469387755102,
+          "support": 385.0
+        },
+        {
+          "class": "cardiovascular diseases",
+          "precision": 0.6157760814249363,
+          "recall": 0.7934426229508197,
+          "f1": 0.6934097421203438,
+          "support": 610.0
+        },
+        {
+          "class": "general pathological conditions",
+          "precision": 0.5549132947976878,
+          "recall": 0.29968782518210196,
+          "f1": 0.3891891891891892,
+          "support": 961.0
+        }
+      ],
+      "confusion_matrix": [
+        [
+          528,
+          26,
+          30,
+          21,
+          28
+        ],
+        [
+          49,
+          176,
+          6,
+          14,
+          54
+        ],
+        [
+          38,
+          12,
+          215,
+          35,
+          85
+        ],
+        [
+          20,
+          11,
+          31,
+          484,
+          64
+        ],
+        [
+          185,
+          139,
+          117,
+          232,
+          288
+        ]
+      ]
+    }
+  },
+  "top_terms": {
+    "cardiovascular diseases": [
+      "hypertension",
+      "myocardial",
+      "coronary",
+      "heart",
+      "artery",
+      "aortic",
+      "hypertensive",
+      "vasculitis",
+      "cardiac",
+      "ischemia",
+      "endocarditis",
+      "ventricular",
+      "cardiovascular",
+      "vascular",
+      "blood pressure"
+    ],
+    "digestive system diseases": [
+      "cirrhosis",
+      "liver",
+      "diarrhea",
+      "gallbladder",
+      "esophageal",
+      "hepatitis",
+      "bowel",
+      "biliary",
+      "gastrointestinal",
+      "gastric",
+      "hepatic",
+      "ulcer",
+      "abdominal",
+      "intestinal",
+      "peritonitis"
+    ],
+    "general pathological conditions": [
+      "chronic",
+      "acute",
+      "postoperative",
+      "hyperplasia",
+      "recurrent",
+      "hemorrhage",
+      "abscess",
+      "deletion",
+      "transformation",
+      "fistula",
+      "bleeding",
+      "inflammatory",
+      "arrhythmias",
+      "patients chronic",
+      "hip"
+    ],
+    "neoplasms": [
+      "cancer",
+      "tumor",
+      "carcinoma",
+      "leukemia",
+      "tumors",
+      "cell",
+      "melanoma",
+      "cells",
+      "malignant",
+      "radiation",
+      "tumours",
+      "cyst",
+      "human",
+      "pheochromocytoma",
+      "lesions"
+    ],
+    "nervous system diseases": [
+      "stroke",
+      "pain",
+      "brain",
+      "cerebral",
+      "headache",
+      "seizures",
+      "meningitis",
+      "nerve",
+      "sleep",
+      "migraine",
+      "neurologic",
+      "intracranial",
+      "syncope",
+      "seizure",
+      "motor"
+    ]
+  },
+  "best_model": "complement_nb"
+}

@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+
+# Node
+node_modules/
+frontend/dist/
+
+# Environment / secrets
+.env
+.env.local
+
+# Data (download with scripts/download_datasets.py; never commit private data)
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+data/uploads/*
+!data/uploads/.gitkeep
+data/*.db
+data/*.log
+# Small demo X-rays exported from the public PneumoniaMNIST test split are kept
+!data/sample/
+
+# Model artefacts (large / reproducible)
+models/**/*.pt
+models/**/*.joblib
+models/**/training_log.txt
+
+# Generated reports
+reports/*
+!reports/.gitkeep
+!reports/tutorial_verification.json
+!reports/live_api_checks.json
+!reports/segmentation_evaluation.json
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.tsbuildinfo

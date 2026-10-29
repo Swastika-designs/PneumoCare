@@ -1,0 +1,146 @@
+{
+  "source": "pneumoniamnist",
+  "root": "C:\\Users\\Swastika Chowdhury\\OneDrive\\Documents\\SEM 7\\Healthcare Analytics\\PneumoCare\\data\\raw\\pneumoniamnist",
+  "classes": [
+    "NORMAL",
+    "PNEUMONIA"
+  ],
+  "notes": [
+    "PneumoniaMNIST official splits: train/val come from the Kaggle training folder (9:1), test is the Kaggle test folder.",
+    "Patient identifiers are not distributed with MedMNIST, so leakage is checked with image hashes only."
+  ],
+  "splits": {
+    "train": {
+      "total": 4708,
+      "class_counts": {
+        "NORMAL": 1214,
+        "PNEUMONIA": 3494
+      },
+      "pneumonia_fraction": 0.7421,
+      "sampled_images": 200,
+      "width": {
+        "min": 224,
+        "max": 224,
+        "mean": 224.0
+      },
+      "height": {
+        "min": 224,
+        "max": 224,
+        "mean": 224.0
+      },
+      "intensity_mean": 0.582,
+      "intensity_std": 0.152
+    },
+    "val": {
+      "total": 524,
+      "class_counts": {
+        "NORMAL": 135,
+        "PNEUMONIA": 389
+      },
+      "pneumonia_fraction": 0.7424,
+      "sampled_images": 200,
+      "width": {
+        "min": 224,
+        "max": 224,
+        "mean": 224.0
+      },
+      "height": {
+        "min": 224,
+        "max": 224,
+        "mean": 224.0
+      },
+      "intensity_mean": 0.5663,
+      "intensity_std": 0.1553
+    },
+    "test": {
+      "total": 624,
+      "class_counts": {
+        "NORMAL": 234,
+        "PNEUMONIA": 390
+      },
+      "pneumonia_fraction": 0.625,
+      "sampled_images": 200,
+      "width": {
+        "min": 224,
+        "max": 224,
+        "mean": 224.0
+      },
+      "height": {
+        "min": 224,
+        "max": 224,
+        "mean": 224.0
+      },
+      "intensity_mean": 0.5655,
+      "intensity_std": 0.159
+    }
+  },
+  "leakage": {
+    "method": "Stage 1: 64-bit average hash; stage 2: 32x32 thumbnail mean absolute difference <= 4.0 grey levels confirms a near-duplicate.",
+    "hash_collisions_between_splits": {
+      "train-val": 16,
+      "train-test": 14,
+      "val-test": 2
+    },
+    "confirmed_near_duplicates": {
+      "train-val": 8,
+      "train-test": 0,
+      "val-test": 0
+    },
+    "examples": [
+      {
+        "splits": "train-val",
+        "index_a": 662,
+        "index_b": 236,
+        "mean_abs_diff": 0.0
+      },
+      {
+        "splits": "train-val",
+        "index_a": 3130,
+        "index_b": 302,
+        "mean_abs_diff": 0.0
+      },
+      {
+        "splits": "train-val",
+        "index_a": 1834,
+        "index_b": 473,
+        "mean_abs_diff": 0.0
+      },
+      {
+        "splits": "train-val",
+        "index_a": 4036,
+        "index_b": 244,
+        "mean_abs_diff": 0.0
+      },
+      {
+        "splits": "train-val",
+        "index_a": 289,
+        "index_b": 172,
+        "mean_abs_diff": 0.0
+      },
+      {
+        "splits": "train-val",
+        "index_a": 1440,
+        "index_b": 253,
+        "mean_abs_diff": 0.0
+      },
+      {
+        "splits": "train-val",
+        "index_a": 2041,
+        "index_b": 61,
+        "mean_abs_diff": 0.0
+      },
+      {
+        "splits": "train-val",
+        "index_a": 4193,
+        "index_b": 105,
+        "mean_abs_diff": 0.0
+      }
+    ],
+    "images_per_split": {
+      "train": 4708,
+      "val": 524,
+      "test": 624
+    },
+    "note": "Hash collisions alone are weak evidence because chest X-rays look alike at 8x8 pixels; only confirmed near-duplicates indicate likely leakage. MedMNIST does not ship patient IDs, so patient-level overlap cannot be checked for that source."
+  }
+}

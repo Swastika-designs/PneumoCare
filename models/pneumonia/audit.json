@@ -1,0 +1,83 @@
+{
+  "audited_at": "2026-10-28T17:11:58.490204+00:00",
+  "checkpoint": "pneumonia_resnet18.pt",
+  "checkpoint_sha256": "fc507aa623cf03f7e8b7d0d45782d52480621e1bee586020635b2cbdcaec8d8e",
+  "all_passed": true,
+  "checks": [
+    {
+      "check": "dataset file integrity",
+      "passed": true,
+      "detail": "sha256 2a6faaca43872b4b... (manifest 2a6faaca43872b4b...)"
+    },
+    {
+      "check": "checkpoint metadata complete",
+      "passed": true,
+      "detail": "pneumonia_resnet18.pt: arch=resnet18 source=pneumoniamnist trained_at=2026-10-26T15:14:42.868921+00:00"
+    },
+    {
+      "check": "training sample count",
+      "passed": true,
+      "detail": "meta 4708 vs split 4708"
+    },
+    {
+      "check": "validation size after duplicate removal",
+      "passed": true,
+      "detail": "meta 516 = 524 - 8 duplicates"
+    },
+    {
+      "check": "test split disjoint from train/val",
+      "passed": true,
+      "detail": "confirmed duplicates train-test=0, val-test=0"
+    },
+    {
+      "check": "threshold re-derived from validation (Youden J)",
+      "passed": true,
+      "detail": "recomputed 0.028754 vs stored 0.028754"
+    },
+    {
+      "check": "test metrics match evaluation.json (metrics, threshold 0.0288)",
+      "passed": true,
+      "detail": "n=624 acc=0.9295 prec=0.9005 rec=0.9974 spec=0.8162 f1=0.9465 auc=0.9939 cm={'tn': 191, 'fp': 43, 'fn': 1, 'tp': 389}"
+    },
+    {
+      "check": "test metrics match evaluation.json (metrics_at_0_5, threshold 0.5000)",
+      "passed": true,
+      "detail": "n=624 acc=0.9679 prec=0.9695 rec=0.9795 spec=0.9487 f1=0.9745 auc=0.9939 cm={'tn': 222, 'fp': 12, 'fn': 8, 'tp': 382}"
+    },
+    {
+      "check": "test split is the official MedMNIST/Kaggle test set",
+      "passed": true,
+      "detail": "624 images, 390 pneumonia, 234 normal"
+    }
+  ],
+  "recomputed": {
+    "metrics": {
+      "accuracy": 0.9294871794871795,
+      "precision": 0.9004629629629629,
+      "recall": 0.9974358974358974,
+      "specificity": 0.8162393162393162,
+      "f1": 0.9464720194647201,
+      "roc_auc": 0.9939184746877056,
+      "confusion_matrix": {
+        "tn": 191,
+        "fp": 43,
+        "fn": 1,
+        "tp": 389
+      }
+    },
+    "metrics_at_0_5": {
+      "accuracy": 0.967948717948718,
+      "precision": 0.9695431472081218,
+      "recall": 0.9794871794871794,
+      "specificity": 0.9487179487179487,
+      "f1": 0.9744897959183674,
+      "roc_auc": 0.9939184746877056,
+      "confusion_matrix": {
+        "tn": 222,
+        "fp": 12,
+        "fn": 8,
+        "tp": 382
+      }
+    }
+  }
+}

@@ -1,0 +1,232 @@
+[
+  {
+    "check": "unknown tutorial -> 404",
+    "passed": true,
+    "detail": "got 404 not_found"
+  },
+  {
+    "check": "unknown EHR source -> 404",
+    "passed": true,
+    "detail": "got 404 not_found"
+  },
+  {
+    "check": "unknown column -> 422",
+    "passed": true,
+    "detail": "got 422 validation_failed"
+  },
+  {
+    "check": "bad PCA scaling -> 422",
+    "passed": true,
+    "detail": "got 422 validation_failed"
+  },
+  {
+    "check": "bad KPI grouping -> 422",
+    "passed": true,
+    "detail": "got 422 validation_failed"
+  },
+  {
+    "check": "invalid scenario body -> 422",
+    "passed": true,
+    "detail": "got 422 invalid_request"
+  },
+  {
+    "check": "empty text -> 422",
+    "passed": true,
+    "detail": "got 422 invalid_request"
+  },
+  {
+    "check": "unknown report -> 404",
+    "passed": true,
+    "detail": "got 404 not_found"
+  },
+  {
+    "check": "bad report format -> 422",
+    "passed": true,
+    "detail": "got 422 invalid_request"
+  },
+  {
+    "check": "bad screening context -> 422",
+    "passed": true,
+    "detail": "got 422 invalid_request"
+  },
+  {
+    "check": "image op without image -> 422",
+    "passed": true,
+    "detail": "got 422 validation_failed"
+  },
+  {
+    "check": "sample path traversal -> 404",
+    "passed": true,
+    "detail": "got 404 not_found"
+  },
+  {
+    "check": "unknown route -> 404 envelope",
+    "passed": true,
+    "detail": "got 404 not_found"
+  },
+  {
+    "check": "reject text file as X-ray",
+    "passed": true,
+    "detail": "'notes.txt' is not a readable image (PNG, JPEG, BMP or TIFF)."
+  },
+  {
+    "check": "reject empty file",
+    "passed": true,
+    "detail": "The uploaded file is empty."
+  },
+  {
+    "check": "reject tiny image",
+    "passed": true,
+    "detail": "Image is too small (8x8); minimum is 32x32 pixels."
+  },
+  {
+    "check": "reject oversized file (11 MB)",
+    "passed": true,
+    "detail": "File is larger than the 10 MB limit."
+  },
+  {
+    "check": "colour photo accepted with warning",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "check": "reject non-CSV upload",
+    "passed": true,
+    "detail": "Only .csv files can be uploaded to the EHR explorer."
+  },
+  {
+    "check": "reject empty CSV",
+    "passed": true,
+    "detail": "Could not parse CSV: No columns to parse from file"
+  },
+  {
+    "check": "accept valid CSV",
+    "passed": true,
+    "detail": "{\"id\":\"upload:6\",\"name\":\"audit_small.csv\",\"rows\":3,\"columns\":3}"
+  },
+  {
+    "check": "uploaded CSV analysable",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "check": "export pneumonia_evaluation.json",
+    "passed": true,
+    "detail": "31017 bytes"
+  },
+  {
+    "check": "export pneumonia_evaluation.csv",
+    "passed": true,
+    "detail": "26 rows"
+  },
+  {
+    "check": "export pneumonia_evaluation.pdf",
+    "passed": true,
+    "detail": "147861 bytes, 2 page(s)"
+  },
+  {
+    "check": "export predictions.json",
+    "passed": true,
+    "detail": "6145 bytes"
+  },
+  {
+    "check": "export predictions.csv",
+    "passed": true,
+    "detail": "26 rows"
+  },
+  {
+    "check": "export predictions.pdf",
+    "passed": true,
+    "detail": "3700 bytes, 1 page(s)"
+  },
+  {
+    "check": "export ehr_quality.json",
+    "passed": true,
+    "detail": "25056 bytes"
+  },
+  {
+    "check": "export ehr_quality.csv",
+    "passed": true,
+    "detail": "55 rows"
+  },
+  {
+    "check": "export ehr_quality.pdf",
+    "passed": true,
+    "detail": "5381 bytes, 2 page(s)"
+  },
+  {
+    "check": "export operations_kpis.json",
+    "passed": true,
+    "detail": "22834 bytes"
+  },
+  {
+    "check": "export operations_kpis.csv",
+    "passed": true,
+    "detail": "42 rows"
+  },
+  {
+    "check": "export operations_kpis.pdf",
+    "passed": true,
+    "detail": "4789 bytes, 2 page(s)"
+  },
+  {
+    "check": "export text_classification.json",
+    "passed": true,
+    "detail": "8099 bytes"
+  },
+  {
+    "check": "export text_classification.csv",
+    "passed": true,
+    "detail": "15 rows"
+  },
+  {
+    "check": "export text_classification.pdf",
+    "passed": true,
+    "detail": "2858 bytes, 1 page(s)"
+  },
+  {
+    "check": "export weight_models.json",
+    "passed": true,
+    "detail": "60809 bytes"
+  },
+  {
+    "check": "export weight_models.csv",
+    "passed": true,
+    "detail": "31 rows"
+  },
+  {
+    "check": "export weight_models.pdf",
+    "passed": true,
+    "detail": "4474 bytes, 2 page(s)"
+  },
+  {
+    "check": "export analysis_history.json",
+    "passed": true,
+    "detail": "89203 bytes"
+  },
+  {
+    "check": "export analysis_history.csv",
+    "passed": true,
+    "detail": "200 rows"
+  },
+  {
+    "check": "export analysis_history.pdf",
+    "passed": true,
+    "detail": "7684 bytes, 2 page(s)"
+  },
+  {
+    "check": "export registry.json",
+    "passed": true,
+    "detail": "2983 bytes"
+  },
+  {
+    "check": "export registry.csv",
+    "passed": true,
+    "detail": "17 rows"
+  },
+  {
+    "check": "export registry.pdf",
+    "passed": true,
+    "detail": "3405 bytes, 1 page(s)"
+  }
+]

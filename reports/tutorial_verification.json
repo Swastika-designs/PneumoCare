@@ -1,0 +1,544 @@
+{
+  "generated_at": "2026-10-28T17:15:35.687336+00:00",
+  "base_url": "http://127.0.0.1:8011",
+  "tutorials": {
+    "T1": {
+      "passed": true,
+      "checks": [
+        {
+          "check": "Synthea sources listed",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "check": "patients table profiled",
+          "passed": true,
+          "detail": "111 rows x 28 columns"
+        },
+        {
+          "check": "numeric summary computed",
+          "passed": true,
+          "detail": "27 numeric columns"
+        },
+        {
+          "check": "histogram sums to non-missing rows",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "check": "timeline for dates",
+          "passed": true,
+          "detail": ""
+        }
+      ],
+      "error": null,
+      "evidence": {
+        "patients": 111,
+        "profile_columns": 32
+      },
+      "seconds": 1.1,
+      "verified_at": "2026-10-28T17:12:04.537011+00:00"
+    },
+    "T2": {
+      "passed": true,
+      "checks": [
+        {
+          "check": "corruption log available",
+          "passed": true,
+          "detail": "14 documented corruptions"
+        },
+        {
+          "check": "validation violations eliminated",
+          "passed": true,
+          "detail": "141 -> 0"
+        },
+        {
+          "check": "ground truth recovered for corrupted columns",
+          "passed": true,
+          "detail": "{'GENDER': 100.0, 'RACE': 100.0, 'STATE': 100.0, 'BIRTHDATE': 100.0, 'HEALTHCARE_EXPENSES': 100.0, 'ZIP': 100.0}"
+        },
+        {
+          "check": "types converted",
+          "passed": true,
+          "detail": ""
+        }
+      ],
+      "error": null,
+      "evidence": {
+        "violations_before": 141,
+        "violations_after": 0
+      },
+      "seconds": 0.7,
+      "verified_at": "2026-10-28T17:12:07.057210+00:00"
+    },
+    "T3": {
+      "passed": true,
+      "checks": [
+        {
+          "check": "missingness quantified",
+          "passed": true,
+          "detail": "14.64% cells missing, 13 complete rows"
+        },
+        {
+          "check": "injected duplicates found",
+          "passed": true,
+          "detail": "exact=5 near=3 removed=8"
+        },
+        {
+          "check": "4 imputation methods compared",
+          "passed": true,
+          "detail": "{'iterative': 13.735972373565387, 'knn': 33.64738589813149, 'mean': 35.119045243575485, 'median': 35.208158776687604}"
+        },
+        {
+          "check": "best method has lowest RMSE",
+          "passed": true,
+          "detail": "iterative"
+        },
+        {
+          "check": "quality score lower for corrupted data",
+          "passed": true,
+          "detail": "messy 78.62 vs original 96.35"
+        }
+      ],
+      "error": null,
+      "evidence": {
+        "ldl_rmse": {
+          "iterative": 13.735972373565387,
+          "knn": 33.64738589813149,
+          "mean": 35.119045243575485,
+          "median": 35.208158776687604
+        },
+        "quality_messy": 78.62,
+        "quality_original": 96.35
+      },
+      "seconds": 0.9,
+      "verified_at": "2026-10-28T17:12:09.839855+00:00"
+    },
+    "T4": {
+      "passed": true,
+      "checks": [
+        {
+          "check": "6 enhancement outputs",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "check": "denoising raises PSNR",
+          "passed": true,
+          "detail": "22.1 dB -> 33.5 dB (Non-local means)"
+        },
+        {
+          "check": "edge filters",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "check": "Otsu threshold computed",
+          "passed": true,
+          "detail": "152.0"
+        },
+        {
+          "check": "two lung fields segmented",
+          "passed": true,
+          "detail": "21.9%"
+        },
+        {
+          "check": "plausible masks on all normal samples",
+          "passed": true,
+          "detail": "4/4"
+        },
+        {
+          "check": "JPEG size falls with quality",
+          "passed": true,
+          "detail": ""
+        }
+      ],
+      "error": null,
+      "evidence": {
+        "sample": "pneumonia_test_0029.png",
+        "psnr_noisy": 22.099397008139174,
+        "psnr_best": 33.4832910290103,
+        "lung_area_pct": 21.873007015306122,
+        "segmentation_method": "Anatomically constrained marker-controlled watershed (classical, no learned model)"
+      },
+      "seconds": 2.3,
+      "verified_at": "2026-10-28T17:12:13.927594+00:00"
+    },
+    "T5": {
+      "passed": true,
+      "checks": [
+        {
+          "check": "SIFT keypoints + 128-D descriptors",
+          "passed": true,
+          "detail": "47"
+        },
+        {
+          "check": "RANSAC recovers known homography",
+          "passed": true,
+          "detail": "0.183 px"
+        },
+        {
+          "check": "RANSAC beats least squares",
+          "passed": true,
+          "detail": "0.183 vs 19.292 px"
+        },
+        {
+          "check": "CNN feature maps",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "check": "linear probe above chance",
+          "passed": true,
+          "detail": "0.930"
+        }
+      ],
+      "error": null,
+      "evidence": {
+        "inliers": 20,
+        "corner_error_px": 0.18264533579349518,
+        "probe_accuracy": 0.9299999999999999
+      },
+      "seconds": 1.2,
+      "verified_at": "2026-10-28T17:12:16.596466+00:00"
+    },
+    "T6": {
+      "passed": true,
+      "checks": [
+        {
+          "check": "visualisation panels",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "check": "comparison images",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "check": "Grad-CAM produced by trained model",
+          "passed": true,
+          "detail": "PNEUMONIA p=1.000"
+        }
+      ],
+      "error": null,
+      "evidence": {
+        "sample": "pneumonia_test_0029.png",
+        "prediction": "PNEUMONIA"
+      },
+      "seconds": 0.9,
+      "verified_at": "2026-10-28T17:12:19.327582+00:00"
+    },
+    "T7": {
+      "passed": true,
+      "checks": [
+        {
+          "check": "4 models incl. baselines",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "check": "best model = lowest test MAE",
+          "passed": true,
+          "detail": "Random forest {'Naive (last period)': 6.615384615384615, 'Moving average': 6.461538461538463, 'Ridge regression': 5.744609028692829, 'Random forest': 5.708406440781441}"
+        },
+        {
+          "check": "time-ordered split",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "check": "FTE formula consistent",
+          "passed": true,
+          "detail": "0.15 vs 0.148"
+        },
+        {
+          "check": "weekly per-class forecast",
+          "passed": true,
+          "detail": ""
+        }
+      ],
+      "error": null,
+      "evidence": {
+        "best_model": "Random forest",
+        "mae": {
+          "Naive (last period)": 6.615384615384615,
+          "Moving average": 6.461538461538463,
+          "Ridge regression": 5.744609028692829,
+          "Random forest": 5.708406440781441
+        }
+      },
+      "seconds": 5.4,
+      "verified_at": "2026-10-28T17:12:26.429277+00:00"
+    },
+    "T8": {
+      "passed": true,
+      "checks": [
+        {
+          "check": "headline KPIs",
+          "passed": true,
+          "detail": "3935 encounters"
+        },
+        {
+          "check": "groups add up",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "check": "significance test",
+          "passed": true,
+          "detail": "Kruskal-Wallis H"
+        },
+        {
+          "check": "payer comparison",
+          "passed": true,
+          "detail": ""
+        }
+      ],
+      "error": null,
+      "evidence": {
+        "encounters": 3935,
+        "avg_cost": 3301.427458703939
+      },
+      "seconds": 0.6,
+      "verified_at": "2026-10-28T17:12:28.928619+00:00"
+    },
+    "T9": {
+      "passed": true,
+      "checks": [
+        {
+          "check": "demand heat-map 7x24",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "check": "bed utilisation series",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "check": "scenario arithmetic",
+          "passed": true,
+          "detail": "63.6% -> 127.2%"
+        }
+      ],
+      "error": null,
+      "evidence": {
+        "providers": 215,
+        "scenario_util": [
+          63.6,
+          127.2
+        ]
+      },
+      "seconds": 0.5,
+      "verified_at": "2026-10-28T17:12:31.420320+00:00"
+    },
+    "T10": {
+      "passed": true,
+      "checks": [
+        {
+          "check": "lemmatisation",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "check": "classifiers above chance (0.23)",
+          "passed": true,
+          "detail": "complement_nb acc=0.586 macroF1=0.578"
+        },
+        {
+          "check": "neoplasm text classified",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "check": "clustering metrics",
+          "passed": true,
+          "detail": "silhouette=0.031 NMI=0.108"
+        }
+      ],
+      "error": null,
+      "evidence": {
+        "logistic_regression": {
+          "accuracy": 0.4989612188365651,
+          "macro_f1": 0.4909677934991391
+        },
+        "linear_svm": {
+          "accuracy": 0.5114265927977839,
+          "macro_f1": 0.5049933576177524
+        },
+        "complement_nb": {
+          "accuracy": 0.5855263157894737,
+          "macro_f1": 0.5777521149708268
+        }
+      },
+      "seconds": 94.6,
+      "verified_at": "2026-10-28T17:14:07.877816+00:00"
+    },
+    "T11": {
+      "passed": true,
+      "checks": [
+        {
+          "check": "negation detected",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "check": "medication-dose linking",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "check": "vitals extracted",
+          "passed": true,
+          "detail": "['Temp 38.9 C', 'HR 112', 'BP 138/84', 'RR 24', 'SpO2 91%']"
+        },
+        {
+          "check": "corpus-scale extraction",
+          "passed": true,
+          "detail": "100 abstracts"
+        }
+      ],
+      "error": null,
+      "evidence": {
+        "entities": 29,
+        "model": "en_core_web_sm"
+      },
+      "seconds": 7.7,
+      "verified_at": "2026-10-28T17:14:17.147602+00:00"
+    },
+    "T12": {
+      "passed": true,
+      "checks": [
+        {
+          "check": "ranked results with matched terms",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "check": "retrieval beats random",
+          "passed": true,
+          "detail": "{'tfidf': 0.438, 'bm25': 0.457}"
+        },
+        {
+          "check": "abbreviation disambiguated",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "check": "corpus-only WSD beats baseline",
+          "passed": true,
+          "detail": "{'lesk': 1.0, 'corpus_lesk': 1.0, 'corpus_only': 0.5813953488372093, 'first_sense_baseline': 0.4186046511627907}"
+        }
+      ],
+      "error": null,
+      "evidence": {
+        "p_at_10": {
+          "tfidf": 0.43800000000000006,
+          "bm25": 0.457
+        },
+        "wsd": {
+          "lesk": 1.0,
+          "corpus_lesk": 1.0,
+          "corpus_only": 0.5813953488372093,
+          "first_sense_baseline": 0.4186046511627907
+        }
+      },
+      "seconds": 16.7,
+      "verified_at": "2026-10-28T17:14:35.588371+00:00"
+    },
+    "T13": {
+      "passed": true,
+      "checks": [
+        {
+          "check": "variance sums to 1",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "check": "ratios decrease",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "check": "scaling matters",
+          "passed": true,
+          "detail": "PC1 0.76 unscaled vs 0.24 scaled"
+        },
+        {
+          "check": "second dataset",
+          "passed": true,
+          "detail": ""
+        }
+      ],
+      "error": null,
+      "evidence": {
+        "nhanes_components_80": 8,
+        "synthea_components_80": 12
+      },
+      "seconds": 2.2,
+      "verified_at": "2026-10-28T17:14:39.475606+00:00"
+    },
+    "T14": {
+      "passed": true,
+      "checks": [
+        {
+          "check": "adult sample size",
+          "passed": true,
+          "detail": "5120"
+        },
+        {
+          "check": "weighted prevalence plausible (CDC ~42%)",
+          "passed": true,
+          "detail": "42.5%"
+        },
+        {
+          "check": "correlations computed",
+          "passed": true,
+          "detail": ""
+        }
+      ],
+      "error": null,
+      "evidence": {
+        "n": 5120,
+        "obesity_weighted": 42.50877414370782
+      },
+      "seconds": 1.3,
+      "verified_at": "2026-10-28T17:14:42.635149+00:00"
+    },
+    "T15": {
+      "passed": true,
+      "checks": [
+        {
+          "check": "no leaky predictors",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "check": "regression beats mean baseline",
+          "passed": true,
+          "detail": "R2 0.115"
+        },
+        {
+          "check": "classifier beats chance",
+          "passed": true,
+          "detail": "AUC 0.699"
+        },
+        {
+          "check": "interpretation produced",
+          "passed": true,
+          "detail": ""
+        }
+      ],
+      "error": null,
+      "evidence": {
+        "best_regressor": "random_forest_regressor",
+        "r2": 0.11486731629132552,
+        "best_classifier": "random_forest_classifier",
+        "roc_auc": 0.6991900834221916
+      },
+      "seconds": 51.2,
+      "verified_at": "2026-10-28T17:15:35.685319+00:00"
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "evaluated_at": "2026-10-28T16:34:35.099742+00:00",
+  "dataset": "PneumoniaMNIST 224 test split",
+  "ground_truth": "none - plausibility and failure signs only, not accuracy",
+  "plausibility_checks": [
+    "two lung fields (left and right)",
+    "total area 15-55% of the image",
+    "left/right area ratio >= 0.4",
+    "each field spans >= 35% of the image height",
+    "field touches the left/right image edge on < 50% of rows"
+  ],
+  "current_method": {
+    "all": {
+      "images": 624,
+      "masks_over_60pct_of_image": 2,
+      "two_fields_pct": 97.3,
+      "all_plausibility_checks_pass_pct": 76.1,
+      "median_mask_area_pct": 30.0
+    },
+    "normal": {
+      "images": 234,
+      "masks_over_60pct_of_image": 0,
+      "two_fields_pct": 99.6,
+      "all_plausibility_checks_pass_pct": 97.0,
+      "median_mask_area_pct": 31.1
+    },
+    "pneumonia": {
+      "images": 390,
+      "masks_over_60pct_of_image": 2,
+      "two_fields_pct": 95.9,
+      "all_plausibility_checks_pass_pct": 63.6,
+      "median_mask_area_pct": 29.1
+    }
+  },
+  "previous_heuristic": {
+    "all": {
+      "images": 624,
+      "masks_over_60pct_of_image": 71,
+      "two_fields_pct": 97.9,
+      "all_plausibility_checks_pass_pct": 54.5,
+      "median_mask_area_pct": 24.8
+    },
+    "normal": {
+      "images": 234,
+      "masks_over_60pct_of_image": 18,
+      "two_fields_pct": 99.1,
+      "all_plausibility_checks_pass_pct": 76.5,
+      "median_mask_area_pct": 27.9
+    },
+    "pneumonia": {
+      "images": 390,
+      "masks_over_60pct_of_image": 53,
+      "two_fields_pct": 97.2,
+      "all_plausibility_checks_pass_pct": 41.3,
+      "median_mask_area_pct": 23.5
+    }
+  },
+  "ms_per_image_current": 15.3,
+  "gradcam_inside_lung_fields": {
+    "images_sampled": 200,
+    "images_with_plausible_mask": 156,
+    "mean_cam_share_inside": 0.304,
+    "mean_lung_area_share": 0.316,
+    "median_ratio": 1.11,
+    "note": "A ratio near 1 means Grad-CAM mass is spread in proportion to area, not concentrated in the lungs."
+  }
+}
